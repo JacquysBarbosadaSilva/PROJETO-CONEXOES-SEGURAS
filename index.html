@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Conexões Seguras</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="wrapper">
+
+    <header>
+      <div class="header-top">
+        <div>
+          <h1>Conexões Seguras</h1>
+          <p class="subtitle">Redes de Computadores &mdash; trabalho prático</p>
+        </div>
+        <a class="github-top" href="https://github.com/JacquysBarbosadaSilva/PROJETO-CONEXOES-SEGURAS/tree/main" target="_blank" rel="noopener">ver repositório</a>
+      </div>
+      <p class="integrantes">Ana Lívia &middot; Jacquys &middot; Jhônatas &middot; Luis Cesar</p>
+    </header>
+
+    <main>
+
+      <div class="modulo">
+        <div class="modulo-info">
+          <span class="num">Módulo 1</span>
+          <h2>Sniffing de rede</h2>
+          <p>
+            A ideia aqui foi mostrar na prática o que acontece quando você usa protocolos
+            sem criptografia numa rede local. Com o Wireshark dá pra ver credenciais e
+            dados passando em texto claro sem muito esforço.
+          </p>
+          <div class="acoes">
+            <button class="btn-ver" data-alvo="modal-1">ver documentação</button>
+            <a href="https://github.com/seu-usuario/PROJETO-CONEXOES-SEGURAS/tree/main/modulo1-sniffing" target="_blank" rel="noopener">pasta no GitHub</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="modulo">
+        <div class="modulo-info">
+          <span class="num">Módulo 2</span>
+          <h2>TLS / SSL</h2>
+          <p>
+            Implementação e análise do handshake TLS. Tem a captura do tráfego em
+            <code>.pcapng</code> e um PDF com a prova de conceito mostrando o processo
+            de negociação de certificados e cifras.
+          </p>
+          <div class="acoes">
+            <button class="btn-ver" data-alvo="modal-2">ver documentação</button>
+            <a href="https://github.com/seu-usuario/PROJETO-CONEXOES-SEGURAS/tree/main/modulo2-tls" target="_blank" rel="noopener">pasta no GitHub</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="modulo">
+        <div class="modulo-info">
+          <span class="num">Módulo 3</span>
+          <h2>Segurança de sessão</h2>
+          <p>
+            Foca em como sessões funcionam e onde elas podem falhar. Abordamos tokens,
+            cookies com os atributos corretos e alguns cenários de sequestro de sessão
+            pra ilustrar os riscos.
+          </p>
+          <div class="acoes">
+            <button class="btn-ver" data-alvo="modal-3">ver documentação</button>
+            <a href="https://github.com/seu-usuario/PROJETO-CONEXOES-SEGURAS/tree/main/modulo3-sessao" target="_blank" rel="noopener">pasta no GitHub</a>
+          </div>
+        </div>
+      </div>
+
+    </main>
+
+  </div>
+
+  <div class="overlay" id="modal-1">
+    <div class="modal">
+      <button class="fechar" data-fechar="modal-1">fechar</button>
+      <h3>Módulo 1 &mdash; Sniffing de rede</h3>
+      <p>
+        Captura e análise de pacotes em redes locais. O objetivo foi demonstrar, de forma
+        concreta, por que protocolos como HTTP, FTP e Telnet são inseguros: com acesso à
+        mesma rede é possível interceptar qualquer coisa que trafegue sem criptografia.
+      </p>
+      <h4>O que foi feito</h4>
+      <ul>
+        <li>Captura passiva de pacotes com Wireshark e tcpdump</li>
+        <li>Análise de sessões HTTP com credenciais expostas</li>
+        <li>Filtros de captura por protocolo e porta</li>
+        <li>Comparação entre tráfego cifrado e em claro</li>
+      </ul>
+      <h4>Arquivos</h4>
+      <div class="links-repo">
+        <a href="https://github.com/JacquysBarbosadaSilva/PROJETO-CONEXOES-SEGURAS/tree/main/modulo1-sniffing/demonstracao-pratica" target="_blank" rel="noopener">demonstracao-pratica/</a>
+        <a href="https://github.com/JacquysBarbosadaSilva/PROJETO-CONEXOES-SEGURAS/tree/main/modulo1-sniffing/evidencias" target="_blank" rel="noopener">evidencias/</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="overlay" id="modal-2">
+    <div class="modal">
+      <button class="fechar" data-fechar="modal-2">fechar</button>
+      <h3>Módulo 2 &mdash; TLS / SSL</h3>
+      <p>
+        Análise prática do protocolo TLS com captura real de handshake. O arquivo
+        <code>modulo2_TLS.pcapng</code> pode ser aberto no Wireshark pra acompanhar
+        cada etapa da negociação, e o PDF detalha o raciocínio por trás de cada passo.
+      </p>
+      <h4>O que foi feito</h4>
+      <ul>
+        <li>Captura completa do TLS handshake (ClientHello até Finished)</li>
+        <li>Análise de certificado X.509 e cadeia de confiança</li>
+        <li>Inspeção das cipher suites negociadas</li>
+        <li>Comparação entre TLS 1.2 e 1.3</li>
+      </ul>
+      <h4>Arquivos</h4>
+      <div class="links-repo">
+        <a href="https://github.com/JacquysBarbosadaSilva/PROJETO-CONEXOES-SEGURAS/tree/main/modulo2-tls/demonstracao-pratica" target="_blank" rel="noopener">Prova de conceito (PDF)</a>
+        <a href="https://github.com/JacquysBarbosadaSilva/PROJETO-CONEXOES-SEGURAS/tree/main/modulo2-tls/evidencias" target="_blank" rel="noopener">modulo2_TLS.pcapng</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="overlay" id="modal-3">
+    <div class="modal">
+      <button class="fechar" data-fechar="modal-3">fechar</button>
+      <h3>Módulo 3 &mdash; Segurança de sessão</h3>
+      <p>
+        Estudo dos mecanismos de sessão em aplicações web e dos principais pontos de
+        falha. Partimos de uma aplicação simples e fomos incrementando as proteções
+        conforme explorávamos cada vetor de ataque.
+      </p>
+      <h4>O que foi feito</h4>
+      <ul>
+        <li>Ciclo de vida de uma sessão HTTP</li>
+        <li>Uso e análise de tokens JWT</li>
+        <li>Atributos de cookie: Secure, HttpOnly, SameSite</li>
+        <li>Demonstração de session hijacking</li>
+        <li>Regeneração de ID após login</li>
+      </ul>
+      <h4>Arquivos</h4>
+      <div class="links-repo">
+        <a href="https://github.com/JacquysBarbosadaSilva/PROJETO-CONEXOES-SEGURAS/tree/main/modulo3-sessao/demonstracao-pratica" target="_blank" rel="noopener">demonstracao-pratica/</a>
+        <a href="https://github.com/JacquysBarbosadaSilva/PROJETO-CONEXOES-SEGURAS/tree/main/modulo3-sessao/evidencias" target="_blank" rel="noopener">evidencias/</a>
+      </div>
+    </div>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>
